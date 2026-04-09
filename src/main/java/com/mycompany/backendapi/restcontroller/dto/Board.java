@@ -1,4 +1,4 @@
-package com.mycompany.backendapi.dto;
+package com.mycompany.backendapi.restcontroller.dto;
 
 import java.util.Date;
 
