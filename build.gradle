@@ -30,7 +30,7 @@ dependencies {
 	testAnnotationProcessor 'org.projectlombok:lombok'
 	
 	//XML 직렬화 및 역직렬화
-	implementation 'tools.jackson.dataformat:jackson-dataformat-xml:3.1.0'
+	implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.21.2'
 }
 
 tasks.named('test') {
