@@ -1,7 +1,11 @@
 package com.mycompany.backendapi.receivedata.controller;
 
+import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
@@ -12,6 +16,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -97,10 +102,28 @@ public class ReceiveDataController {
 		log.info("file name: " + attach.getOriginalFilename());
 		log.info("file type: " + attach.getContentType());
 		
-		byte[] fileData = attach.getBytes();
-		String strData = new String(fileData);
+		//방법1
+//		byte[] fileData = attach.getBytes();
+//		String strData = new String(fileData);
+//		log.info("file data: " + strData);
+		
+		//방법2
+		String strData="";
+		BufferedReader br = new BufferedReader(new InputStreamReader(attach.getInputStream()));
+		String data="";
+		while((data = br.readLine()) != null) {
+			strData += data;
+		}
 		log.info("file data: " + strData);
 		
 		return map;
+	}
+	
+	//request-header
+	//userAgent : client type
+	@GetMapping("/request-header")
+	public String requestHeader(@RequestHeader("User-Agent") String userAgent){
+		log.info("User-Agent: " + userAgent);
+		return userAgent;
 	}
 }
