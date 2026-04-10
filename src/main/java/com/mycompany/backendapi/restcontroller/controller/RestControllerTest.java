@@ -4,6 +4,7 @@ import java.util.Date;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.mycompany.backendapi.restcontroller.dto.Board;
@@ -13,6 +14,7 @@ import com.mycompany.backendapi.restcontroller.dto.Board;
 @RequestMapping("/restcontroller")
 public class RestControllerTest {
 
+//	@RequestMapping(value = "/", method = RequestMethod.GET)
 	@GetMapping("/")
 	public String index() {
 		return "Spring Back End Home";

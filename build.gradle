@@ -31,6 +31,9 @@ dependencies {
 	
 	//XML 직렬화 및 역직렬화
 	implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.21.2'
+	
+	//템플릿 추가
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 }
 
 tasks.named('test') {
