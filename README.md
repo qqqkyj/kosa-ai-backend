@@ -1,0 +1,115 @@
+# 🌟 생성형AI와 프롬프트를 활용한 AI 응용개발자 양성과정
+
+![Java](https://img.shields.io/badge/Java-ED8B00?style=flat&logo=java&logoColor=white)
+![Spring](https://img.shields.io/badge/Spring-6DB33F?style=flat&logo=spring&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat&logo=springboot&logoColor=white)
+![JPA](https://img.shields.io/badge/JPA-59666C?style=flat)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
+![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=flat&logo=openai&logoColor=white)
+![LangChain](https://img.shields.io/badge/LangChain-000000?style=flat)
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat&logo=pandas&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
+![React](https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=black)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat&logo=mysql&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat&logo=amazonaws&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white)
+![Postman](https://img.shields.io/badge/Postman-FF6C37?style=flat&logo=postman&logoColor=white)
+
+> 📌 본 저장소는 **KOSA**에서 진행되는  
+> _생성형AI와 프롬프트를 활용한 AI 응용개발자 양성과정(2026.03 ~ 2026.09)_ 동안 학습한 내용을 정리합니다.
+
+---
+
+## 📅 과정 개요
+
+- **교육명** : 생성형 AI와 프롬프트를 활용한 AI 응용개발자 양성과정
+- **기간** : 2026년 3월 27일 ~ 2026년 9월 11일 (약 6개월 / 총 960시간)
+- **형식** : 이론 + 실습 + 프로젝트 기반 교육 (월~금 풀타임)
+- **주최** : 한국인공지능·소프트웨어산업협회(KOSA) / 비스텔리젼스
+- **주관** : 고용노동부, 한국산업인력공단
+
+---
+
+## 🎯 교육 목표
+
+- 생성형 AI 및 프롬프트 기반 서비스 개발 역량 확보
+- Spring Boot 기반 REST API 백엔드 개발 능력 습득
+- React 기반 프론트엔드 개발 및 통합 서비스 구현
+- AWS / Docker 기반 클라우드 배포 경험 확보
+- 실무 프로젝트 및 멘토링을 통한 포트폴리오 구축
+
+---
+
+## 📖 일차별 학습 기록
+
+- **2026-04-09** : [REST API의 개념](https://winter-chance-82b.notion.site/_-4-2-341b140a63ed80c6b3c8c3d7c1cfb592)
+- **2026-04-10** : [Http Method - GET, POST, PUT, DELETE 등](https://winter-chance-82b.notion.site/_-4-2-341b140a63ed80c6b3c8c3d7c1cfb592)
+- **2026-04-13** : [직렬화, 역직렬화, Return type 등](https://winter-chance-82b.notion.site/_4-3-341b140a63ed80229579f2f533ecab13)
+
+> 🗒 앞으로 매일 학습 내용을 업데이트합니다.
+
+---
+
+## 📚 학습 커리큘럼
+
+### 1️⃣ 프로그래밍 언어
+
+- **Java** : OOP, 컬렉션, 예외 처리, 람다/스트림
+- **JavaScript** : ES6+, 비동기 처리(Promise, async/await), DOM 제어
+- **Python** : 데이터 처리, AI 모델 활용, API 연동
+
+---
+
+### 2️⃣ 웹 개발
+
+- **HTML / CSS** : 반응형 UI, 웹 페이지 구조 설계
+- **JavaScript** : 이벤트 처리, DOM 조작, 비동기 통신
+- **Spring Framework** : IoC, DI, MVC 패턴
+
+---
+
+### 3️⃣ 백엔드
+
+- **Spring Boot** : REST API 설계 및 구현
+- **Spring MVC** : 요청/응답 처리 구조 이해
+- **JPA / Hibernate** : ORM, 엔티티 매핑, 영속성 관리
+- **Security** : 인증/인가 (JWT, OAuth)
+
+---
+
+### 4️⃣ 프론트엔드
+
+- **React** : 컴포넌트 기반 SPA 개발
+- **State 관리** : Hooks, 상태 흐름 관리
+- **API 연동** : Axios 기반 서버 통신
+
+---
+
+### 5️⃣ 클라우드 & DevOps
+
+- **AWS** : EC2, S3, RDS 기반 서비스 배포
+- **Docker** : 컨테이너 기반 환경 구성
+- **CI/CD** : GitHub Actions 기반 자동 배포
+
+---
+
+### 6️⃣ AI / 생성형 AI
+
+- **Prompt Engineering** : 프롬프트 설계 및 최적화
+- **LLM 활용** : OpenAI, Gemini API 연동
+- **RAG (Retrieval-Augmented Generation)**
+  - Vector DB (Chroma, FAISS)
+  - Embedding 모델 활용
+  - 문서 기반 질의응답 시스템 구현
+- **AI 서비스 개발** : 챗봇, 추천 시스템 등
+
+---
+
+## 🛠 프로젝트
+
+1. **REST API 기반 CRUD 웹 애플리케이션**
+2. **JWT 인증 기반 사용자 관리 시스템**
+3. **React + Spring Boot 통합 풀스택 프로젝트**
+4. **생성형 AI 기반 챗봇 서비스 (RAG 적용)**
+5. **Docker + AWS 기반 클라우드 배포 프로젝트**
