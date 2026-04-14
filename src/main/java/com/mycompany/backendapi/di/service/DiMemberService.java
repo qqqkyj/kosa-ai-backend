@@ -1,0 +1,17 @@
+package com.mycompany.backendapi.di.service;
+
+import org.springframework.stereotype.Service;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Service
+@Slf4j
+public class DiMemberService {
+	public void join() {
+		log.info("실행");
+	}
+	
+	public void login() {
+		log.info("실행");
+	}
+}
