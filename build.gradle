@@ -32,6 +32,10 @@ dependencies {
 	//XML 직렬화 및 역직렬화
 	implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.21.2'
 	
+	//MyBatis 의존성 패키지 추가
+	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.5'
+    testImplementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter-test:3.0.5'
+	
 	//템플릿 추가
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 }
