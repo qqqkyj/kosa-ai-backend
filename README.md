@@ -43,9 +43,10 @@
 
 ## 📖 일차별 학습 기록
 
-- **2026-04-09** : [REST API의 개념](https://winter-chance-82b.notion.site/_-4-2-341b140a63ed80c6b3c8c3d7c1cfb592)
-- **2026-04-10** : [Http Method - GET, POST, PUT, DELETE 등](https://winter-chance-82b.notion.site/_-4-2-341b140a63ed80c6b3c8c3d7c1cfb592)
-- **2026-04-13** : [직렬화, 역직렬화, Return type 등](https://winter-chance-82b.notion.site/_4-3-341b140a63ed80229579f2f533ecab13)
+- **2026-04-09** : [REST API 개념과 Spring 프로젝트 환경 구축](https://winter-chance-82b.notion.site/_-4-2-341b140a63ed80c6b3c8c3d7c1cfb592)
+- **2026-04-10** : [Spring MVC 구조와 HTTP 요청 처리 및 데이터 바인딩](https://winter-chance-82b.notion.site/_-4-2-341b140a63ed80c6b3c8c3d7c1cfb592)
+- **2026-04-13** : [HTTP 요청/응답 처리와 직렬화/역직렬화 및 DTO 구조](https://winter-chance-82b.notion.site/_4-3-341b140a63ed80229579f2f533ecab13)
+- **2026-04-14** : [Spring Validation과 Spring Bean & DI 개념 및 DB 연동(Docker - Oracle Container) ](https://winter-chance-82b.notion.site/_4-3-341b140a63ed80229579f2f533ecab13)
 
 > 🗒 앞으로 매일 학습 내용을 업데이트합니다.
 
