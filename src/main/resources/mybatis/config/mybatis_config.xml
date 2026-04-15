@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-config.dtd">
+  
+<configuration>
+	<typeAliases>
+	  <!--
+	  - 개별 등록 방식
+	  - 하나씩 직접 alias 지정
+	  -->
+	  <typeAlias alias="Member" type="com.mycompany.backendapi.database.entity.Member"/>
+	  <typeAlias alias="Board" type="com.mycompany.backendapi.database.entity.Board"/>
+	  
+	  <!--
+	  - 패키지 등록 방식
+	  - 해당 패키지 아래 모든 클래스 자동 등록
+      - 클래스 이름 = alias 자동 적용
+	  -->
+	  <!-- <package name="com.mycompany.backendapi.database.entity"/>  -->
+	</typeAliases>
+</configuration>

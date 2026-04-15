@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--
+mapper: MyBatis SQL 매핑의 최상위 루트
+namespace: 반드시 DAO 인터페이스의 전체 경로 (패키지 + 클래스명)
+→ 이 값이 MemberDao와 연결됨 (핵심!)
+-->
+<mapper namespace="com.mycompany.backendapi.database.dao.MemberDao">
+	<!--
+    insert: 데이터 INSERT SQL
+    id: MemberDao 인터페이스의 메서드 이름과 반드시 동일해야 함
+    parameterType: 전달되는 객체의 전체 클래스 경로
+    #{ } : 객체의 getter를 통해 값 자동 바인딩
+    -->
+	<insert id="insert" parameterType="Member">
+		INSERT INTO member
+		(mid, nname, mpassword, menabled, mrole, memail)
+		VALUES
+		(#{mid}, #{nname}, #{mpassword}, #{menabled}, #{mrole}, #{memail})
+	</insert>
+	
+	<delete id="delete" parameterType="String">
+		DELETE FROM member
+		WHERE mid=#{mid}
+	</delete>
+	
+	<update id="update" parameterType="Member">
+		UPDATE member
+		SET 
+            mpassword = #{mpassword},
+            menabled = #{menabled},
+            memail = #{memail}
+        WHERE mid = #{mid}
+	</update>
+	
+	<!--
+    resultType: 반환되는 객체 타입 (패키지 포함 전체 경로 권장)
+    -->
+	<select id="selectByMid"
+			parameterType="String"
+            resultType="Member">
+		SELECT *
+        FROM member
+        WHERE mid = #{mid}
+	</select>
+</mapper>
