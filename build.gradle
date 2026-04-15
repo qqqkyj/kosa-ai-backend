@@ -38,6 +38,9 @@ dependencies {
 	
 	//템플릿 추가
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	
+	//오르클 JDBC DRIVER 추가
+	runtimeOnly 'com.oracle.database.jdbc:ojdbc11'
 }
 
 tasks.named('test') {
