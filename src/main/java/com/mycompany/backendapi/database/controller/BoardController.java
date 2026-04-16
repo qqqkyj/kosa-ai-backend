@@ -6,12 +6,16 @@ import java.util.Map;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.mycompany.backendapi.database.dto.BoardCreateRequest;
+import com.mycompany.backendapi.database.dto.BoardCreateResponse;
+import com.mycompany.backendapi.database.dto.BoardListItemResponse;
 import com.mycompany.backendapi.database.dto.Pager;
 import com.mycompany.backendapi.database.entity.Board;
 import com.mycompany.backendapi.database.service.BoardService;
@@ -33,18 +37,32 @@ public class BoardController {
 		int totalRows = boardService.getTotalRows();
 		// 페이징 정보를 담고있는 pager 생성
 		Pager pager = new Pager(ROWS_PER_PAGE, PAGES_PER_GROUP, totalRows, pageNo);
-		// 현재 페이지 내용 가져오기
-		List<Board> list = boardService.getList(pager);
+		// 현재 페이지 내용 가져오기 (Board를 BoardListItemResponse로 변환)
+		List<BoardListItemResponse> listItems = boardService.getListResponse(pager);
 		//JSON 응답을 위한 Map 리턴
 		Map<String, Object> map = new HashMap<>();
 		map.put("pager", pager);
-		map.put("boards", list);
+		map.put("boards", listItems);
 		return map;
 	}
 	
 	@PostMapping("/create")
-	public void create() {
+	public BoardCreateResponse create(@ModelAttribute BoardCreateRequest request) {
+		Board board = new Board();
+		board.setBtitle(request.getBtitle());
+		board.setBcontent(request.getBcontent());
+		board.setBwriter(request.getBwriter());
 		
+		Board createdBoard = boardService.create(board);
+		
+		return BoardCreateResponse.builder()
+				.bno(createdBoard.getBno())
+				.btitle(createdBoard.getBtitle())
+				.bwriter(createdBoard.getBwriter())
+				.bhitcount(createdBoard.getBhitcount())
+				.battachoname(createdBoard.getBattachonmae())
+				.battachtype(createdBoard.getBattachtype())
+				.build();
 	}
 	
 	@GetMapping("/read")

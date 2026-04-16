@@ -41,19 +41,31 @@
 	<select id="selectByBno"
 			parameterType="int"
 			resultType="Board">
-		SELECT bno, btitle, bcontent, mid as bwriter, bdate, bhitcount, 
+		SELECT bno, btitle, bcontent, bwriter, bdate, bhitcount, 
          battachoname, battachsname, battachtype, battachdata
 		FROM board
 		WHERE bno=#{bno}
 	</select>
 	
 	<select id="countAllRow" resultType="int">
-		SELECT COUNT(*) FROM board;
+		SELECT COUNT(*) FROM board
 	</select>
 	
+	<!-- ROWNUM은 Oracle DB에서 조회 결과에 순서대로 붙는 가짜 번호(행 번호) -->
+	<!-- CDATA은 특수문자('<', '>', '&' 등) 무시하고 텍스트로 처리 -->
 	<select id="selectPage" parameterType="Pager" resultType="Board">
-		SELECT bno, btitle, bcontent, bwriter, bdate, bhitcount
-		FROM board
-		WHERE ROWNUM BETWEEN #{Pager.startRowNo} AND #{Pager.endRowNo}
+	    <![CDATA[
+	    select * from (
+	        select rownum rnum, bno, btitle, bwriter, bdate, bhitcount
+	        from (
+	            select bno, btitle, bwriter, bdate, bhitcount
+	            from board
+	            order by bno desc
+	        )
+	        where rownum <= #{endRowNo}
+	    )
+	    where rnum >= #{startRowNo}
+	    ]]>
 	</select>
+	
 </mapper>
