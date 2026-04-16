@@ -41,9 +41,19 @@
 	<select id="selectByBno"
 			parameterType="int"
 			resultType="Board">
-		SELECT select bno, btitle, bcontent, mid as bwriter, bdate, bhitcount, 
+		SELECT bno, btitle, bcontent, mid as bwriter, bdate, bhitcount, 
          battachoname, battachsname, battachtype, battachdata
 		FROM board
 		WHERE bno=#{bno}
+	</select>
+	
+	<select id="countAllRow" resultType="int">
+		SELECT COUNT(*) FROM board;
+	</select>
+	
+	<select id="selectPage" parameterType="Pager" resultType="Board">
+		SELECT bno, btitle, bcontent, bwriter, bdate, bhitcount
+		FROM board
+		WHERE ROWNUM BETWEEN #{Pager.startRowNo} AND #{Pager.endRowNo}
 	</select>
 </mapper>
