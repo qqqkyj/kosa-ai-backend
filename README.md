@@ -1,16 +1,17 @@
 # 🌟 생성형AI와 프롬프트를 활용한 AI 응용개발자 양성과정
 
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=flat&logo=java&logoColor=white)
-![Spring](https://img.shields.io/badge/Spring-6DB33F?style=flat&logo=spring&logoColor=white)
 ![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=flat&logo=springboot&logoColor=white)
-![JPA](https://img.shields.io/badge/JPA-59666C?style=flat)
+![MyBatis](https://img.shields.io/badge/MyBatis-DC382D?style=flat&logo=apache&logoColor=white)
+![Oracle](https://img.shields.io/badge/Oracle-FF0000?style=flat&logo=oracle&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat&logo=fastapi&logoColor=white)
 ![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=flat&logo=openai&logoColor=white)
 ![LangChain](https://img.shields.io/badge/LangChain-000000?style=flat)
 ![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat&logo=pandas&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-013243?style=flat&logo=numpy&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
 ![React](https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=black)
-![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat&logo=mysql&logoColor=white)
 ![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat&logo=amazonaws&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white)
@@ -47,6 +48,7 @@
 - **2026-04-10** : [Spring MVC 구조와 HTTP 요청 처리 및 데이터 바인딩](https://winter-chance-82b.notion.site/_-4-2-341b140a63ed80c6b3c8c3d7c1cfb592)
 - **2026-04-13** : [HTTP 요청/응답 처리와 직렬화/역직렬화 및 DTO 구조](https://winter-chance-82b.notion.site/_4-3-341b140a63ed80229579f2f533ecab13)
 - **2026-04-14** : [Spring Validation과 Spring Bean & DI 개념 및 DB 연동(Docker - Oracle Container) ](https://winter-chance-82b.notion.site/_4-3-341b140a63ed80229579f2f533ecab13)
+- **2026-04-15** : [Oracle DB 연동 및 MyBatis 활용 구조 이해) ](https://winter-chance-82b.notion.site/_4-3-341b140a63ed80229579f2f533ecab13)
 
 > 🗒 앞으로 매일 학습 내용을 업데이트합니다.
 
