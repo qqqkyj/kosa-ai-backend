@@ -41,7 +41,8 @@
 	<select id="selectByBno"
 			parameterType="int"
 			resultType="Board">
-		SELECT *
+		SELECT select bno, btitle, bcontent, mid as bwriter, bdate, bhitcount, 
+         battachoname, battachsname, battachtype, battachdata
 		FROM board
 		WHERE bno=#{bno}
 	</select>
