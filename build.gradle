@@ -41,6 +41,9 @@ dependencies {
 	
 	//오르클 JDBC DRIVER 추가
 	runtimeOnly 'com.oracle.database.jdbc:ojdbc11'
+	
+	// 비밀번호 암호화를 위해 Spring Security Crypto 추가
+	implementation 'org.springframework.security:spring-security-crypto:7.0.4'
 }
 
 tasks.named('test') {

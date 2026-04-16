@@ -1,14 +1,13 @@
-package com.mycompany.backendapi.database.entity;
+package com.mycompany.backendapi.database.dto;
 
 import lombok.Builder;
 import lombok.Data;
 
 @Data
 @Builder
-public class Member {
+public class MemberResponse {
 	private String mid;
 	private String mname;
-	private String mpassword;
 	private String memail;
 	private boolean menabled;
 	private String mrole;

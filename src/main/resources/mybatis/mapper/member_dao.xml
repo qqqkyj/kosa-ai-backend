@@ -15,9 +15,9 @@ namespace: 반드시 DAO 인터페이스의 전체 경로 (패키지 + 클래스
     -->
 	<insert id="insert" parameterType="Member">
 		INSERT INTO member
-		(mid, nname, mpassword, menabled, mrole, memail)
+		(mid, mname, mpassword, menabled, mrole, memail)
 		VALUES
-		(#{mid}, #{nname}, #{mpassword}, #{menabled}, #{mrole}, #{memail})
+		(#{mid}, #{mname}, #{mpassword}, #{menabled}, #{mrole}, #{memail})
 	</insert>
 	
 	<delete id="delete" parameterType="String">
@@ -30,6 +30,7 @@ namespace: 반드시 DAO 인터페이스의 전체 경로 (패키지 + 클래스
 		SET 
             mpassword = #{mpassword},
             menabled = #{menabled},
+            mname = #{mname},
             memail = #{memail}
         WHERE mid = #{mid}
 	</update>
@@ -40,8 +41,14 @@ namespace: 반드시 DAO 인터페이스의 전체 경로 (패키지 + 클래스
 	<select id="selectByMid"
 			parameterType="String"
             resultType="Member">
-		SELECT *
-        FROM member
-        WHERE mid = #{mid}
+		SELECT
+		    MID,
+		    MNAME,
+		    MPASSWORD,
+		    MEMAIL,
+		    MENABLED,
+		    MROLE
+		FROM MEMBER
+		WHERE MID = #{mid}
 	</select>
 </mapper>
