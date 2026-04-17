@@ -32,7 +32,7 @@ import com.mycompany.backendapi.database.dto.BoardUpdateRequest;
 import com.mycompany.backendapi.database.dto.BoardUpdateResponse;
 import com.mycompany.backendapi.database.dto.Pager;
 import com.mycompany.backendapi.database.entity.Board;
-import com.mycompany.backendapi.database.intercepter.AccessTokenCheck;
+import com.mycompany.backendapi.database.interceptor.AccessTokenCheck;
 import com.mycompany.backendapi.database.service.BoardService;
 
 import jakarta.servlet.http.HttpServletResponse;
