@@ -20,6 +20,7 @@ import lombok.RequiredArgsConstructor;
 public class MemberService {
 
 	private final MemberDao memberDao;
+	private final JwtService jwtService;
 	private final BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
 	public MemberJoinResponse join(MemberJoinRequest request) {
@@ -67,6 +68,8 @@ public class MemberService {
 		    return MemberLoginResponse.builder()
 		            .result("SUCCESS")
 		            .message("로그인 성공")
+		            //로그인 성공 시 JWT 발급
+		            .accessToken(jwtService.createJwt(member.getMid(), member.getMemail()))
 		            .build();
 	}
 

@@ -32,6 +32,7 @@ import com.mycompany.backendapi.database.dto.BoardUpdateRequest;
 import com.mycompany.backendapi.database.dto.BoardUpdateResponse;
 import com.mycompany.backendapi.database.dto.Pager;
 import com.mycompany.backendapi.database.entity.Board;
+import com.mycompany.backendapi.database.intercepter.AccessTokenCheck;
 import com.mycompany.backendapi.database.service.BoardService;
 
 import jakarta.servlet.http.HttpServletResponse;
@@ -64,6 +65,7 @@ public class BoardController {
 	}
 	
 	@PostMapping("/create")
+	@AccessTokenCheck
 	public BoardCreateResponse create(@ModelAttribute BoardCreateRequest request) throws Exception{
 		// Entity 생성
 		Board board = new Board();
@@ -111,6 +113,7 @@ public class BoardController {
 	}
 	
 	@GetMapping("/battach/{bno}")
+	@AccessTokenCheck
 	public void battach(@PathVariable("bno") int bno, HttpServletResponse response) throws Exception {
 		Board board = boardService.getBoard(bno);
 		
@@ -132,6 +135,7 @@ public class BoardController {
 	}
 	
 	@PutMapping("/update")
+	@AccessTokenCheck
 	public BoardUpdateResponse update(@ModelAttribute BoardUpdateRequest request) throws Exception {
 		// Entity 생성
 		Board board = new Board();
@@ -173,6 +177,7 @@ public class BoardController {
 	}
 	
 	@DeleteMapping("/delete/{bno}")
+	@AccessTokenCheck
 	public BoardDeleteResponse delete(@PathVariable("bno") int bno) {
 		return boardService.delete(bno);
 	}

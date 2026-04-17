@@ -17,6 +17,7 @@ import com.mycompany.backendapi.database.dto.MemberLoginResponse;
 import com.mycompany.backendapi.database.dto.MemberRemoveResponse;
 import com.mycompany.backendapi.database.dto.MemberResponse;
 import com.mycompany.backendapi.database.dto.MemberUpdateRequest;
+import com.mycompany.backendapi.database.service.JwtService;
 import com.mycompany.backendapi.database.service.MemberService;
 
 import lombok.RequiredArgsConstructor;
