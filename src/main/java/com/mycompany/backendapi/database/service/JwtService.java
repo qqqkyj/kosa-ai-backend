@@ -42,7 +42,6 @@ public class JwtService {
 	
 	//JWT 유효성 검증
 	public boolean validateJwt(String jwt) {
-		boolean result = false;
 		try {
 			JwtParser jwtParser = Jwts.parser()
 										.verifyWith(secretkey)
