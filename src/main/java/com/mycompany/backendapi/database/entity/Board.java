@@ -15,5 +15,5 @@ public class Board {
 	private String battachonmae;//기존 파일 이름
 	private String battachsname;//서버 저장 파일 이름
 	private String battachtype;
-	private Byte[] battachdata;
+	private byte[] battachdata;
 }

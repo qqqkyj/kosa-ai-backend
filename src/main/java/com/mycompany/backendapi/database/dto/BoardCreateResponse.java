@@ -10,6 +10,7 @@ public class BoardCreateResponse {
 	private String btitle;
 	private String bwriter;
 	private int bhitcount;
+	private String bdate;
 	private String battachoname;
 	private String battachtype;
 }

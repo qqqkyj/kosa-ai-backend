@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 
 import com.mycompany.backendapi.database.dao.BoardDao;
+import com.mycompany.backendapi.database.dto.BoardCreateResponse;
 import com.mycompany.backendapi.database.dto.BoardListItemResponse;
 import com.mycompany.backendapi.database.dto.Pager;
 import com.mycompany.backendapi.database.entity.Board;
@@ -35,8 +36,16 @@ public class BoardService {
 	            .toList();
 	}
 	
-	public Board create(Board board) {
+	public BoardCreateResponse create(Board board) {
 		boardDao.insert(board);
-		return board;
+		
+		return BoardCreateResponse.builder()
+								.bno(board.getBno())
+								.btitle(board.getBtitle())
+								.bwriter(board.getBwriter())
+								.bhitcount(board.getBhitcount())
+								.battachoname(board.getBattachonmae())
+								.battachtype(board.getBattachtype())
+								.build();
 	}
 }

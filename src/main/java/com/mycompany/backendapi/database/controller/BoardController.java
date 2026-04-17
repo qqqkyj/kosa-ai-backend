@@ -1,5 +1,10 @@
 package com.mycompany.backendapi.database.controller;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -21,7 +26,9 @@ import com.mycompany.backendapi.database.entity.Board;
 import com.mycompany.backendapi.database.service.BoardService;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @RestController
 @RequestMapping("/database/board")
 @RequiredArgsConstructor
@@ -47,22 +54,45 @@ public class BoardController {
 	}
 	
 	@PostMapping("/create")
-	public BoardCreateResponse create(@ModelAttribute BoardCreateRequest request) {
+	public BoardCreateResponse create(@ModelAttribute BoardCreateRequest request) throws Exception{
+		// Entity 생성
 		Board board = new Board();
+		
+		//문자 파트 확인
+		log.info(request.getBtitle());
+		log.info(request.getBcontent());
+		log.info(request.getBwriter());
 		board.setBtitle(request.getBtitle());
 		board.setBcontent(request.getBcontent());
 		board.setBwriter(request.getBwriter());
 		
-		Board createdBoard = boardService.create(board);
+		// 파일 파트 확인 및 서버 파일 시스템에 파일을 저장
+		// null과 isEmpty() 모두 검사해줘야됨
+		if(request.getBattach() != null && !request.getBattach().isEmpty()) {
+			String battachoname = request.getBattach().getOriginalFilename();
+			String contentType = request.getBattach().getContentType();
+			log.info(battachoname);
+			log.info(contentType);
+			board.setBattachtype(contentType);
+			board.setBattachonmae(battachoname);
+			
+			// 방법1 : DB에 파일을 직접 저장
+			// 파일 사이즈가 작은 경우 (만약 크기가 크다면 InputStream 사용을 권장)
+			byte[] fileData = request.getBattach().getBytes();
+			board.setBattachdata(fileData);
+			
+//			방법2 : 서버 파일 시스템에 파일로 저장하고 관리
+//			String battachsname = new Date().getTime() + "-" + battachoname;
+//			OutputStream os = new FileOutputStream("C:\\Temp\\" + battachsname);
+//			os.write(fileData);
+//			os.flush();
+//			os.close();
+//			board.setBattachsname(battachsname);
+//			log.info(battachsname);
+		}
 		
-		return BoardCreateResponse.builder()
-				.bno(createdBoard.getBno())
-				.btitle(createdBoard.getBtitle())
-				.bwriter(createdBoard.getBwriter())
-				.bhitcount(createdBoard.getBhitcount())
-				.battachoname(createdBoard.getBattachonmae())
-				.battachtype(createdBoard.getBattachtype())
-				.build();
+		// 서비스의 비즈니스 로직 호출
+		return boardService.create(board);
 	}
 	
 	@GetMapping("/read")
