@@ -50,6 +50,7 @@
 - **2026-04-14** : [Spring Validation과 Spring Bean & DI 개념 및 DB 연동(Docker - Oracle Container) ](https://winter-chance-82b.notion.site/_4-3-341b140a63ed80229579f2f533ecab13)
 - **2026-04-15** : [Oracle DB 연동 및 MyBatis 활용 구조 이해](https://winter-chance-82b.notion.site/_4-3-341b140a63ed80229579f2f533ecab13)
 - **2026-04-16** : [Controller-Service-DAO 구조로 구현하는 회원/게시판 CRUD API](https://winter-chance-82b.notion.site/_4-3-341b140a63ed80229579f2f533ecab13)
+- **2026-04-17** : [게시판 CRUD , 파일 처리 , JWT 인증 및 인터셉터 보안 적용](https://winter-chance-82b.notion.site/_4-3-341b140a63ed80229579f2f533ecab13)
 
 > 🗒 앞으로 매일 학습 내용을 업데이트합니다.
 
@@ -75,10 +76,10 @@
 
 ### 3️⃣ 백엔드
 
-- **Spring Boot** : REST API 설계 및 구현
-- **Spring MVC** : 요청/응답 처리 구조 이해
-- **JPA / Hibernate** : ORM, 엔티티 매핑, 영속성 관리
-- **Security** : 인증/인가 (JWT, OAuth)
+- **Spring Boot** : REST API 설계 및 CRUD 구현
+- **Spring MVC** : Controller → Service → DAO 구조 설계
+- **MyBatis** : SQL Mapper 기반 데이터 처리 및 XML 매핑
+- **Security** : JWT 기반 인증 및 인터셉터를 활용한 인가 처리
 
 ---
 
@@ -101,7 +102,7 @@
 ### 6️⃣ AI / 생성형 AI
 
 - **Prompt Engineering** : 프롬프트 설계 및 최적화
-- **LLM 활용** : OpenAI, Gemini API 연동
+- **LLM 활용** : OpenAI API 기반 서비스 연동
 - **RAG (Retrieval-Augmented Generation)**
   - Vector DB (Chroma, FAISS)
   - Embedding 모델 활용
@@ -112,8 +113,8 @@
 
 ## 🛠 프로젝트
 
-1. **REST API 기반 CRUD 웹 애플리케이션**
-2. **JWT 인증 기반 사용자 관리 시스템**
+1. **MyBatis 기반 REST API CRUD 웹 애플리케이션**
+2. **JWT 인증 + 인터셉터 기반 사용자 인증 시스템**
 3. **React + Spring Boot 통합 풀스택 프로젝트**
 4. **생성형 AI 기반 챗봇 서비스 (RAG 적용)**
 5. **Docker + AWS 기반 클라우드 배포 프로젝트**
