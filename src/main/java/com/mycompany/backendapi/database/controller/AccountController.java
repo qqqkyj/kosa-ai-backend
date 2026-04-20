@@ -30,23 +30,28 @@ public class AccountController {
 									.amount(request.getAmount())
 									.build();
 		
-		TransferResponse tranferResponse;
-		try {
-			accountService.transfer(transfer);
-			tranferResponse = TransferResponse.builder()
-					.result("success")
-					.build();
-		} catch (InsufficientFundsException e) {
-			tranferResponse = TransferResponse.builder()
-									.result("failure")
-									.message("잔고 부족")
-									.build();
-		} catch (NoAccountExistException e) {
-			tranferResponse = TransferResponse.builder()
-									.result("failure")
-									.message(e.getMessage())
-									.build();
-		}
-		return tranferResponse;
+//		TransferResponse tranferResponse;
+//		try {
+//			accountService.transfer(transfer);
+//			tranferResponse = TransferResponse.builder()
+//					.result("success")
+//					.build();
+//		} catch (InsufficientFundsException e) {
+//			tranferResponse = TransferResponse.builder()
+//									.result("failure")
+//									.message("잔고 부족")
+//									.build();
+//		} catch (NoAccountExistException e) {
+//			tranferResponse = TransferResponse.builder()
+//									.result("failure")
+//									.message(e.getMessage())
+//									.build();
+//		}
+		
+		accountService.transfer(transfer);
+		
+		return  TransferResponse.builder()
+				.result("success")
+				.build();
 	}
 }
