@@ -17,6 +17,7 @@
 	  <typeAlias alias="Member" type="com.mycompany.backendapi.database.entity.Member"/>
 	  <typeAlias alias="Board" type="com.mycompany.backendapi.database.entity.Board"/>
 	  <typeAlias alias="Pager" type="com.mycompany.backendapi.database.dto.Pager"/>
+	  <typeAlias alias="Account" type="com.mycompany.backendapi.database.entity.Account"/>
 	  
 	  <!-- 엔티티 패키지 전체 자동 alias 등록 -->
       <!-- <package name="com.mycompany.backendapi.database.entity"/>-->
