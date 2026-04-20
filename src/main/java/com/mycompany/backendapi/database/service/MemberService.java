@@ -14,7 +14,9 @@ import com.mycompany.backendapi.database.dto.MemberUpdateRequest;
 import com.mycompany.backendapi.database.entity.Member;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class MemberService {
@@ -63,6 +65,8 @@ public class MemberService {
 		                .message("비밀번호가 틀립니다.")
 		                .build();
 		    }
+		    
+		    log.info("로그인 성공");
 
 		    // 3. 성공
 		    return MemberLoginResponse.builder()
