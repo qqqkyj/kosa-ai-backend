@@ -35,6 +35,7 @@ import com.mycompany.backendapi.database.entity.Board;
 import com.mycompany.backendapi.database.interceptor.AccessTokenCheck;
 import com.mycompany.backendapi.database.service.BoardService;
 
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -66,17 +67,18 @@ public class BoardController {
 	
 	@PostMapping("/create")
 	@AccessTokenCheck
-	public BoardCreateResponse create(@ModelAttribute BoardCreateRequest request) throws Exception{
+	public BoardCreateResponse create(@ModelAttribute BoardCreateRequest request
+									, HttpServletRequest hsr) throws Exception{
 		// Entity 생성
 		Board board = new Board();
 		
 		//문자 파트 확인
 		log.info(request.getBtitle());
 		log.info(request.getBcontent());
-		log.info(request.getBwriter());
+		log.info(hsr.getAttribute("mid").toString());
 		board.setBtitle(request.getBtitle());
 		board.setBcontent(request.getBcontent());
-		board.setBwriter(request.getBwriter());
+		board.setBwriter(hsr.getAttribute("mid").toString());
 		
 		// 파일 파트 확인 및 서버 파일 시스템에 파일을 저장
 		// null과 isEmpty() 모두 검사해줘야됨

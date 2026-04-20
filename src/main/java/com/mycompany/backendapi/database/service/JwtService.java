@@ -22,7 +22,7 @@ import lombok.extern.slf4j.Slf4j;
 @Service
 public class JwtService {
 	private final SecretKey secretkey;
-	private static final long JWTDURATION = 30 * 24 * 60 * 60 * 1000;
+	private static final long JWTDURATION = 30L * 24 * 60 * 60 * 1000;
 	
 	public JwtService(@Value("${jwt.secret.key}") String jwtSecretKey) throws Exception {
 		log.info("jwt.secret.key: "+jwtSecretKey);
@@ -34,7 +34,7 @@ public class JwtService {
 	public String createJwt(String mid, String memail) {
 		return  Jwts.builder()
 				.subject(mid) //사용자의 식별값
-				.claim("email", memail) // 사용자의 기타 정보
+				.claim("memail", memail) // 사용자의 기타 정보
 				.expiration(new Date(new Date().getTime() + JWTDURATION)) //JWT 만료 기간
 				.signWith(secretkey) //서명
 				.compact(); // 위 내용을 암호화해서 JWT를 반환
