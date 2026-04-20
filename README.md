@@ -51,6 +51,7 @@
 - **2026-04-15** : [Oracle DB 연동 및 MyBatis 활용 구조 이해](https://winter-chance-82b.notion.site/_4-3-341b140a63ed80229579f2f533ecab13)
 - **2026-04-16** : [Controller-Service-DAO 구조로 구현하는 회원/게시판 CRUD API](https://winter-chance-82b.notion.site/_4-3-341b140a63ed80229579f2f533ecab13)
 - **2026-04-17** : [게시판 CRUD , 파일 처리 , JWT 인증 및 인터셉터 보안 적용](https://winter-chance-82b.notion.site/_4-3-341b140a63ed80229579f2f533ecab13)
+- **2026-04-20** : [JWT 기반 인증 인터셉터와 트랜잭션·글로벌 예외 처리로 안전한 API 설계](https://winter-chance-82b.notion.site/_4-4-8c5b140a63ed8249a46981051e81f653)
 
 > 🗒 앞으로 매일 학습 내용을 업데이트합니다.
 
