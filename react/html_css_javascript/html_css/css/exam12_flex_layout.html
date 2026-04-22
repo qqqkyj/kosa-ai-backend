@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #wrapper {
+        border: 3px solid red;
+        display: flex;
+        flex-direction: column;
+      }
+
+      header {
+        border: 1px solid black;
+        width: 100%;
+        /* background-color: #666;
+        padding: 30px;
+        text-align: center;
+        font-size: 35px;
+        color: white; */
+      }
+
+      section {
+        border: 2px solid blue;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: row;
+      }
+
+      nav {
+        border: 2px solid blue;
+        width: 100%;
+        background-color: #ccc;
+      }
+
+      .img1 {
+        border: 2px solid yellow;
+        width: 100%;
+      }
+
+      .img2 {
+        border: 2px solid green;
+        width: 100%;
+        height: 25%;
+      }
+
+      .img3 {
+        border: 2px solid green;
+        width: 100%;
+        height: 75%;
+      }
+
+      article {
+        flex-grow: 1;
+        background-color: #f1f1f1;
+        /* padding: 20px; */
+      }
+
+      footer {
+        /* padding: 10px; */
+        text-align: center;
+        color: white;
+        background-color: #777;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <header>
+        <img class="img2" src="/images/layout/2026-04-22_15-13-45.png" />
+      </header>
+
+      <section>
+        <article>
+          <img class="img2" src="/images/layout/2026-04-22_15-14-45.png" />
+          <img class="img3" src="/images/layout/2026-04-22_15-16-10.png" />
+        </article>
+        <nav>
+          <img class="img1" src="/images/layout/2026-04-22_15-16-28.png" />
+          <img class="img1" src="/images/layout/2026-04-22_15-16-43.png" />
+          <img class="img1" src="/images/layout/2026-04-22_15-17-41.png" />
+        </nav>
+      </section>
+
+      <footer>
+        <img class="img2" src="/images/layout/2026-04-22_15-18-42.png" />
+        <img class="img2" src="/images/layout/2026-04-22_15-19-00.png" />
+      </footer>
+    </div>
+  </body>
+</html>
