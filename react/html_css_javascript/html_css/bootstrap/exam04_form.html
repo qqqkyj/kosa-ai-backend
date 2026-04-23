@@ -16,39 +16,39 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
-    <style>
-      #wrapper {
-        margin: 0px auto;
-        width: 500px;
-      }
-    </style>
   </head>
   <body>
-    <div id="wrapper">
-      <form>
-        <div class="form-group">
-          <label for="exampleInputEmail1">Email address</label>
+    <div class="card m-3">
+      <div class="card-header">BoardWriteForm Component</div>
+      <div class="card-body">
+        <div class="mb-3">
+          <!-- for를 설정함에 따라 label을 선택하면 해당 input에 focus가 감 -->
+          <label for="btitle" class="form-label">제목</label>
           <input
-            type="email"
+            type="text"
             class="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
-          />
-          <small id="emailHelp" class="form-text text-muted"
-            >We'll never share your email with anyone else.</small
-          >
-        </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
-          <input
-            type="password"
-            class="form-control"
-            id="exampleInputPassword1"
+            id="btitle"
+            placeholder=" 게시물 제목 입력"
           />
         </div>
-        <button type="submit" class="btn btn-primary btn-sm">로그인</button>
-        <button type="submit" class="btn btn-success btn-sm">취소</button>
-      </form>
+        <div class="mb-3">
+          <label for="bcontent" class="form-label">내용</label>
+          <textarea
+            class="form-control"
+            id="bcontent"
+            rows="5"
+            placeholder=" 게시물 내용을 입력해 주세요...."
+          ></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="battach" class="form-label">첨부 파일</label>
+          <input class="form-control" type="file" id="battach" />
+        </div>
+        <div class="text-center">
+          <button class="btn btn-outline-info btn-sm">등록</button>
+          <button class="btn btn-outline-danger btn-sm">취소</button>
+        </div>
+      </div>
     </div>
   </body>
 </html>
