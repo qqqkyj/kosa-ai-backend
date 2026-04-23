@@ -35,6 +35,53 @@
         fun41(10, 20, 30);
         fun41(10, 20);
         fun41(10);
+        fun41();
+      }
+
+      function fun5(arg1, arg2) {
+        function fun51(x, y) {
+          var result = x + y;
+          return result;
+        }
+
+        const fun52 = (x, y) => {
+          var result = x + y;
+          return result;
+        };
+
+        const fun53 = (x, y) => x + y;
+
+        const result1 = fun51(arg1, arg2);
+        const result2 = fun52(arg1, arg2);
+        const result3 = fun53(arg1, arg2);
+
+        console.log("result1: ", result1);
+        console.log("result2: ", result2);
+        console.log("result3: ", result3);
+      }
+
+      function fun6() {
+        const var1 = { name: "홍길동", age: 30, job: "개발자" };
+        console.log(var1);
+
+        const fun61 = function (obj) {
+          console.log(obj.name);
+          console.log(obj.age);
+          console.log(obj.job);
+        };
+
+        fun61(var1);
+
+        const fun62 = function () {
+          return { name: "홍길동", age: 30, job: "개발자" };
+        };
+        const result = fun62();
+        console.log(result.name, result.age, result.job);
+
+        // {}를 함수로 인식하기 때문에 객체를 return 하기 위해서 괄호() 추가
+        const fun63 = () => ({ name: "홍길동", age: 30, job: "개발자" });
+        const result2 = fun63();
+        console.log(result2.name, result2.age, result2.job);
       }
     </script>
   </head>
@@ -50,6 +97,12 @@
     </button>
     <button onclick="fun4()" class="btn btn-primary btn-sm m-2">
       fun4() 호출
+    </button>
+    <button onclick="fun5(3, 7)" class="btn btn-secondary btn-sm m-2">
+      fun5() 호출
+    </button>
+    <button onclick="fun6()" class="btn btn-secondary btn-sm m-2">
+      fun6() 호출
     </button>
   </body>
 </html>
