@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      // 선언문
+      function fun1() {
+        console.log("fun1() 실행");
+      }
+
+      // 실행문 (뒤에 ;-세미콜론 필요)
+      const fun2 = () => console.log("fun2() 실행");
+      const fun3 = function () {
+        console.log("fun3() 실행");
+      };
+
+      function fun4() {
+        function fun41(x, y, z = 7) {
+          console.log("fun4() 실행", x, y, z);
+        }
+
+        fun41(10, 20, 30);
+        fun41(10, 20);
+        fun41(10);
+      }
+    </script>
+  </head>
+  <body>
+    <button onclick="fun1()" class="btn btn-info btn-sm m-2">
+      fun1() 호출
+    </button>
+    <button onclick="fun2()" class="btn btn-danger btn-sm m-2">
+      fun2() 호출
+    </button>
+    <button onclick="fun3()" class="btn btn-warning btn-sm m-2">
+      fun3() 호출
+    </button>
+    <button onclick="fun4()" class="btn btn-primary btn-sm m-2">
+      fun4() 호출
+    </button>
+  </body>
+</html>
