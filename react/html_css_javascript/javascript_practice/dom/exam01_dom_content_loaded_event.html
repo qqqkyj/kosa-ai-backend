@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      startAni();
+    });
+
+    function startAni() {
+      const aniImage = document.querySelector("#aniImage");
+
+      timerId = setInterval(() => {
+        let num = parseInt(Math.random() * 17) + 1;
+        aniImage.src = "../../images/photos/photo" + num + ".jpg";
+      }, 1000);
+    }
+  </script>
+  <body>
+    <img
+      id="aniImage"
+      src="../../images/photos/photo1.jpg"
+      width="200"
+      height="150"
+    />
+  </body>
+</html>
