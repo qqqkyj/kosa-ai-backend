@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const btn1 = document.querySelector("#btn1");
+        console.log(btn1);
+
+        const btn2 = document.getElementById("btn2");
+        console.log(btn2);
+
+        const mid = document.querySelector("#mid");
+        console.log(mid);
+
+        const cbHobby = document.querySelectorAll(".cbHobby:checked");
+        console.log(cbHobby);
+      });
+    </script>
+  </head>
+  <body>
+    <button id="btn1">버튼1</button>
+    <button id="btn2">버튼2</button>
+
+    <input type="text" id="mid" />
+
+    <input type="checkbox" class="cbHobby" />영화
+    <input type="checkbox" class="cbHobby" checked />음악
+    <input type="checkbox" class="cbHobby" checked />게임
+  </body>
+</html>
