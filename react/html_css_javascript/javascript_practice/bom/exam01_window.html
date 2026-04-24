@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="fun1()">ViewPort의 크기</button>
+    <script>
+      function fun1() {
+        console.log(innerWidth, innerHeight);
+      }
+    </script>
+
+    <button onclick="fun2()">URL 조작하기</button>
+    <script>
+      function fun2() {
+        console.log(location.href);
+        // location.href = "https://www.naver.com";
+      }
+    </script>
+
+    <button onclick="fun3()">네비게이션</button>
+    <script>
+      function fun3() {
+        history.back();
+        // history.forward();
+      }
+    </script>
+  </body>
+</html>

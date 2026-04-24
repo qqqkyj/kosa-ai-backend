@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <button onclick="fun1()">JavaScript 객체 -> JSON 변환</button>
+    <script>
+      function fun1() {
+        const board = { bno: 1, title: "제목1", writer: "홍길동" };
+        console.log("board: ", board);
+        const strBoardJson = JSON.stringify(board);
+        console.log("strBoardJson: ", strBoardJson);
+
+        const boards = [
+          { bno: 1, title: "제목1", writer: "홍길동" },
+          { bno: 2, title: "제목2", writer: "홍길서" },
+          { bno: 3, title: "제목3", writer: "홍길남" },
+          { bno: 4, title: "제목4", writer: "홍길서" },
+          { bno: 5, title: "제목5", writer: "홍길북" },
+        ];
+
+        const strJsonArray = JSON.stringify(boards);
+        console.log("strJsonArray: ", strJsonArray);
+      }
+    </script>
+
+    <button onclick="fun2()">JSON 변환 -> JavaScript 객체</button>
+    <script>
+      function fun2() {
+        const strJsonObject = '{"bno":1,"title":"제목1","writer":"홍길동"}';
+        const board = JSON.parse(strJsonObject);
+        console.log("board: ", board);
+
+        const strJsonArray =
+          '[{"bno":1,"title":"제목1","writer":"홍길동"},{"bno":2,"title":"제목2","writer":"홍길서"},{"bno":3,"title":"제목3","writer":"홍길남"},{"bno":4,"title":"제목4","writer":"홍길서"},{"bno":5,"title":"제목5","writer":"홍길북"}]';
+        const boards = JSON.parse(strJsonArray);
+        console.log(boards);
+      }
+    </script>
+  </body>
+</html>
