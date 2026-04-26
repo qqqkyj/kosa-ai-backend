@@ -55,6 +55,7 @@
 - **2026-04-21** : [Node.js 환경 구축, 모듈 시스템, SPA, CSR/SSR, React·Next.js 기초](https://winter-chance-82b.notion.site/_4-4-8c5b140a63ed8249a46981051e81f653)
 - **2026-04-22** : [HTML 기초](https://winter-chance-82b.notion.site/_4-4-8c5b140a63ed8249a46981051e81f653)
 - **2026-04-23** : [Bootstrap 기반 UI 컴포넌트 활용과 JavaScript 핵심 문법(스코프, 함수, 객체, 배열) 정리](https://winter-chance-82b.notion.site/_4-4-8c5b140a63ed8249a46981051e81f653)
+- **2026-04-24** : [JavaScript 핵심 개념(배열 처리, DOM/BOM 조작, JSON, 정규표현식, 이벤트·타이머 기반 동적 웹 구현)](https://winter-chance-82b.notion.site/_4-4-8c5b140a63ed8249a46981051e81f653)
 
 > 🗒 앞으로 매일 학습 내용을 업데이트합니다.
 
