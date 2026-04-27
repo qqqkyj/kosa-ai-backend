@@ -1,10 +1,49 @@
-function Component() {
+import ChildComponentC from "@/app/common/ChildComponentC";
+import Image from "next/image";
+
+function Exam02Expressions() {
+  const name = "리액트";
+
+  const fun = function () {
+    return "함수 리턴값";
+  };
+
+  const imageFile = "photo1.jpg";
+
+  const imageHeight = 130;
+
   return (
     <div className="card mt-2">
-      <div className="card-header"></div>
-      <div className="card-body"></div>
+      <div className="card-header">Exam02Expressions</div>
+      <div className="card-body">
+        <ChildComponentC />
+        <div className="mt-2">
+          <p>변수 값: {name}</p>
+          <p>연산식: {2 + 3}</p>
+          <p>함수호출: {fun()}</p>
+          <p>
+            {
+              <Image
+                src={"/images/" + imageFile}
+                alt=""
+                width={200}
+                height={imageHeight}
+                loading="eager"
+              />
+            }
+
+            <Image
+              src={`/images/${imageFile}`}
+              alt=""
+              width={200}
+              height={imageHeight}
+              loading="eager"
+            />
+          </p>
+        </div>
+      </div>
     </div>
   );
 }
 
-export default Component;
+export default Exam02Expressions;
