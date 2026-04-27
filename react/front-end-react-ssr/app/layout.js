@@ -1,5 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import BootstrapClient from "./BootstrapClient";
+import AppHeader from "./AppHeader";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,7 +21,21 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body>{children}</body>
+      <body>
+        <BootstrapClient />
+
+        <div className="d-flex flex-column vh-100">
+          <AppHeader />
+          <div className="flew-glow-1 container-fluid">
+            <div className="row">
+              {/* 사이드 바 */}
+              <div className="col-md-4 bg-secondary-subtle"></div>
+              {/* 메인 컨텐츠 */}
+              <div className="col-md-8">{children}</div>
+            </div>
+          </div>
+        </div>
+      </body>
     </html>
   );
 }
