@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-function Exam02PrimitiveTypeState() {
+function Exam06UseEffect() {
   // 상태 정의
   const [number, setNumber] = useState(0);
   const [color, setColor] = useState("#7e1b1b");
@@ -26,11 +26,19 @@ function Exam02PrimitiveTypeState() {
     );
   };
 
-  console.log("계속 실행돼?");
+  //상태가 변경이 되면 자동 콜백되는 함수를 등록
+  useEffect(() => {
+    console.log("상태 변경 완료1: ", number, color);
+  });
+
+  //상태가 변경이 되면 자동 콜백되는 함수를 등록
+  useEffect(() => {
+    console.log("상태 변경 완료2: ", number, color);
+  });
 
   return (
     <div className="card mt-2">
-      <div className="card-header">Exam02PrimitiveTypeState</div>
+      <div className="card-header">Exam06UseEffect</div>
       <div className="card-body">
         <button onClick={addNumber} className="btn btn-info btn-sm me-2">
           숫자 증가
@@ -45,4 +53,4 @@ function Exam02PrimitiveTypeState() {
   );
 }
 
-export default Exam02PrimitiveTypeState;
+export default Exam06UseEffect;

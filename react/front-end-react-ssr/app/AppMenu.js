@@ -161,6 +161,11 @@ async function AppMenu() {
                 </Link>
               </li>
               <li className="nav-item">
+                <Link href="/Ch03PropsAndState/Exam06UseEffect">
+                  Exam06UseEffect
+                </Link>
+              </li>
+              <li className="nav-item">
                 <Link href="/Ch03PropsAndState/Exam07StateToProp">
                   Exam07StateToProp
                 </Link>
