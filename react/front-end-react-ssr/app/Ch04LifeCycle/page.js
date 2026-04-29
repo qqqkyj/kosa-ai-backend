@@ -13,12 +13,35 @@ function Ch04LifeCycle() {
     setCount2(count2 + 1);
   };
 
+  // 마운트, 업데이트, 언마운트시에 실행
+  // useEffect(() => {
+  //   console.log("마운트/업데이트 실행");
+  //   return () => {
+  //     console.log("언마운트 실행");
+  //   };
+  // });
+
+  //마운트/언마운트될 때만 한 번 실행
+  // useEffect(() => {
+  //   console.log("마운트 실행");
+  //   return () => {
+  //     console.log("언마운트 실행");
+  //   };
+  // }, []);
+
+  // useEffect(() => {
+  //   console.log(`마운트/count1 업데이트후 실행(count1=${count1})`);
+  //   return () => {
+  //     console.log(`언마운트/count1 업데이트전 실행(count1=${count1})`);
+  //   };
+  // }, [count1]);
+
   useEffect(() => {
-    console.log("마운트/업데이트 실행");
+    console.log(`마운트/count2 업데이트후 실행(count2=${count2})`);
     return () => {
-      console.log("언마운트 실행");
+      console.log(`언마운트/count2 업데이트전 실행(count2=${count2})`);
     };
-  });
+  }, [count2]);
 
   return (
     <div className="card mt-2">
