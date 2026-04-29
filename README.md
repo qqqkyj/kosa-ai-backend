@@ -58,6 +58,7 @@
 - **2026-04-24** : [JavaScript 핵심 개념(배열 처리, DOM/BOM 조작, JSON, 정규표현식, 이벤트·타이머 기반 동적 웹 구현)](https://winter-chance-82b.notion.site/_4-4-8c5b140a63ed8249a46981051e81f653)
 - **2026-04-27** : [Next.js 기반 React 개발 환경부터 컴포넌트 구조, 라우팅, 스타일링, Bootstrap 적용, 그리고 Streaming SSR까지의 프론트엔드 핵심 기초 정리](https://winter-chance-82b.notion.site/_4-5-9b4b140a63ed83999d2b014b32d61117)
 - **2026-04-28** : [useRef·Props·State·Effect 기반의 컴포넌트 상태 관리와 Next.js 레이아웃 및 에러 처리 구조 이해](https://winter-chance-82b.notion.site/_4-5-9b4b140a63ed83999d2b014b32d61117)
+- **2026-04-29** : [Props/State, useEffect(생명주기), 라우팅, useMemo, useCallback, React.memo(성능 최적화)](https://winter-chance-82b.notion.site/_4-5-9b4b140a63ed83999d2b014b32d61117)
 
 > 🗒 앞으로 매일 학습 내용을 업데이트합니다.
 
