@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import BoardListItem from "./BoardListItem";
 
 function getBoard() {
@@ -20,14 +20,19 @@ function BoardList() {
   const [boards, setBoards] = useState(getBoard);
 
   //함수 정의
-  const getLength1 = function () {
-    console.log("getLength1() 실행");
-    return boards.length;
-  };
+  //[boards]: boards 상태가 변경될 때만 함수를 정의
+  const getLength1 = useCallback(
+    function () {
+      console.log("getLength1() 실행");
+      return boards.length;
+    },
+    [boards],
+  );
 
-  const handleBtitleChange = function (event) {
+  //[] : 마운트 될때 딱 1번 정의
+  const handleBtitleChange = useCallback(function (event) {
     setBtitle(event.target.value);
-  };
+  }, []);
 
   //boards가 변경되는 경우만 상태 값 변경
   const getLength2 = useMemo(() => {
@@ -35,10 +40,13 @@ function BoardList() {
     return boards.length;
   }, [boards]);
 
+  //아래와 같이 모든 상태를 다 사용하는 경우
+  //useCallback을 사용해도 효과 X
   const addBoard = function () {
     const newBoard = { bno, btitle };
     setBoards([newBoard, ...boards]);
     setBno(bno + 1);
+    setBtitle("");
   };
 
   return (

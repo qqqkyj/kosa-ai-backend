@@ -1,11 +1,11 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import BoardListItem from "./BoardListItem";
 
-function getBoard() {
+function getBoards() {
   const boards = [];
-  for (var i = 5; i >= 1; i--) {
+  for (var i = 1; i <= 5; i++) {
     boards.push({ bno: i, btitle: "제목" + i, selected: false });
   }
   return boards;
@@ -16,38 +16,60 @@ function BoardList() {
   const [bno, setBno] = useState(6);
   const [btitle, setBtitle] = useState("");
 
-  //게시물 목록을 위한 상태 정의
-  const [boards, setBoards] = useState(getBoard);
+  // 게시물 목록을 위한 상태 정의
+  const [boards, setBoards] = useState(getBoards);
 
-  //함수 정의
-  const getLength1 = function () {
-    console.log("getLength1() 실행");
-    return boards.length;
-  };
+  // 함수 정의
+  const getLength1 = useCallback(
+    function () {
+      console.log("getLength1() 실행");
+      return boards.length;
+    },
+    [boards],
+  );
 
-  const handleBtitleChange = function (event) {
-    setBtitle(event.target.value);
-  };
-
-  //boards가 변경되는 경우만 상태 값 변경
+  // [boards]: boards 상태가 변경될 때만 함수 정의
   const getLength2 = useMemo(() => {
-    console.log("getLength2() 실행");
+    console.log("getLength2 계산");
     return boards.length;
   }, [boards]);
 
+  // []: 마운트될때만 딱 1번 함수 정의
+  const handleBtitleChange = useCallback(function (event) {
+    setBtitle(event.target.value);
+  }, []);
+
   const addBoard = function () {
     const newBoard = { bno, btitle };
-    setBoards([newBoard, ...boards]);
+    setBoards(boards.concat(newBoard));
     setBno(bno + 1);
+    setBtitle("");
   };
+
+  //preBoards(변경의 기준이 되는 이전 상태값)를 재정의
+  const removeBoard = useCallback((bno) => {
+    setBoards((preBoards) => preBoards.filter((board) => board.bno !== bno));
+  }, []);
+
+  const changeBoard = useCallback((bno) => {
+    setBoards((preBoards) =>
+      preBoards.map((board) => {
+        if (board.bno === bno) {
+          return { ...board, btitle: board.btitle + "(변경)" };
+        } else {
+          return board;
+        }
+      }),
+    );
+  }, []);
 
   return (
     <div className="card mt-2">
-      <div className="card-header"></div>
+      <div className="card-header">BoardList</div>
       <div className="card-body">
         <div>
           <div className="mb-2">
-            게시물 수(리렌더링될 때마다 getLength1() 함수를 재호출):
+            게시물 수(리렌더링될 때마다 getLength1() 함수를 재호출):{" "}
             {getLength1()}
           </div>
           <div className="mb-2">
@@ -58,12 +80,12 @@ function BoardList() {
           <div className="d-flex align-items-center me-2 mb-3">
             <span className="me-2">제목:</span>
             <input
-              onChange={handleBtitleChange}
               type="text"
               value={btitle}
+              onChange={handleBtitleChange}
               className="me-2"
             />
-            <button onClick={addBoard} className="btn btn-info btn-sm">
+            <button className="btn btn-info btn-sm" onClick={addBoard}>
               추가
             </button>
           </div>
@@ -78,8 +100,8 @@ function BoardList() {
           <BoardListItem
             key={board.bno}
             board={board}
-            removeBoard={null}
-            changeBoard={null}
+            removeBoard={removeBoard}
+            changeBoard={changeBoard}
           />
         ))}
       </div>
